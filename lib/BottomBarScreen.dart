@@ -8,6 +8,7 @@ class BottomBarScreen extends StatefulWidget {
 
 class _BottomBarScreenState extends State<BottomBarScreen> {
   List _pages = [
+    //---Pages for the Bottom Bar Screen Icons/Text/Divisions---///
     DashboardPage(),
     DashboardPage(),
     DashboardPage(),
@@ -33,12 +34,14 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         onTap: _selectPage,
         currentIndex: _selectedPageIndex,
         items: <BottomNavigationBarItem>[
+          //^^^Items like icon or text for the corresponding Bottom Bar Pages--//
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
               size: 28,
             ),
-            title: Container(),
+            title:
+                Container(), //<<<--Could also write null in the place of conatainer--<<
           ),
           BottomNavigationBarItem(
             icon: Icon(

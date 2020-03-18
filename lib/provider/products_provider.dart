@@ -48,7 +48,7 @@ class Products with ChangeNotifier {
     )
   ];
   List<Product> get items {
-    return [..._items];
+    return [..._items]; //--Getter for the listed items--//
   }
 
   Product findById(String id) {

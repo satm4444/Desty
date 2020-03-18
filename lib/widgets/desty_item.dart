@@ -8,47 +8,55 @@ import 'package:provider/provider.dart';
 class DestyItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final selectedProducts = Provider.of<Product>(context, listen: false);
+    final selectedProducts = Provider.of<Product>(context,
+        listen: false); //provides the data type of the model
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 5.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: Stack(
+          //^^^Stack for the desired overlapping layout--//
           children: <Widget>[
             Container(
               height: 220,
-              width: 160,
+              width: 140,
               child: Image.network(
-                selectedProducts.imageURL,
+                selectedProducts
+                    .imageURL, //<<--Place for images to be placed from the provider//but actually from data model
                 fit: BoxFit.cover,
               ),
             ),
             Positioned(
-                left: 10,
-                bottom: 10,
-                child: Row(
-                  children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          selectedProducts.title,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                              fontSize: 20),
-                        ),
-                        Text(
-                          selectedProducts.subtitle,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                              fontSize: 14),
-                        )
-                      ],
-                    )
-                  ],
-                ))
+              //^^^This widget is used here to control the position of the clidren widget of stack--//
+
+              left: 10, //positioning value
+              bottom: 10, //positioning value
+              child: Row(
+                //^^^This Row is positioned bottom left corner of the parent stack--//
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        selectedProducts.title, //<<---data through provider--<<
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                            fontSize: 20),
+                      ),
+                      Text(
+                        selectedProducts
+                            .subtitle, //<<---data through provider--<<
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                            fontSize: 14),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

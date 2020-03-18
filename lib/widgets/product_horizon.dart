@@ -7,15 +7,16 @@ import 'package:provider/provider.dart';
 class ProductHorizon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final loadedProducts = Provider.of<Products>(context);
-    final products = loadedProducts.items;
+    final loadedProducts = Provider.of<Products>(context); //provides the data
+    final products = loadedProducts
+        .items; //<<--Actual data stored here and sent to child below to take its place in DestyItem---
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       padding: EdgeInsets.all(10),
       itemCount: products.length,
       itemBuilder: (ctx, index) => ChangeNotifierProvider.value(
         value: products[index],
-        child: DestyItem(),
+        child: DestyItem(), //<<<---Item to be build in list View--,,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+////~~~~~~Main model of the data in this Desty App~~~~~///
 class Product with ChangeNotifier {
   final String id;
   final String title;
