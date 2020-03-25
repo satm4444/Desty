@@ -1,4 +1,7 @@
 import 'package:desty/dashboard.dart';
+import 'package:desty/favourite_screen.dart';
+import 'package:desty/profile_screen.dart';
+import 'package:desty/search_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarScreen extends StatefulWidget {
@@ -10,9 +13,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
   List _pages = [
     //---Pages for the Bottom Bar Screen Icons/Text/Divisions---///
     DashboardPage(),
-    DashboardPage(),
-    DashboardPage(),
-    DashboardPage(),
+    SearchScreen(),
+    FavouriteScreen(),
+    ProfileScreen(),
   ];
   int _selectedPageIndex = 0;
 

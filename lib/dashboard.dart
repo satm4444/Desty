@@ -1,3 +1,4 @@
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:desty/widgets/product_horizon.dart';
 import 'package:flutter/material.dart';
 
@@ -49,13 +50,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Material(
-                          color: Colors.grey.shade100,
-                          child: InkWell(
-                            onTap: () {},
-                            child: Icon(Icons.menu), //leading icon
-                          ),
-                        ),
+                        child: IconButton(
+                            icon: Icon(Icons.menu), onPressed: () {}),
                       ),
                       Text(
                         "DESTY", //title text
@@ -66,7 +62,9 @@ class _DashboardPageState extends State<DashboardPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Icon(Icons.search), //trailing icon
+                        child: IconButton(
+                            icon: Icon(Icons.search),
+                            onPressed: () {}), //trailing icon
                       ),
                     ],
                   ),
@@ -74,8 +72,40 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
               SizedBox(
                 //^^^--For vertical spcaing--//
-                height: 30,
+                height: 10,
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 200,
+                  width: double.infinity,
+                  child: Carousel(
+                      images: [
+                        NetworkImage(
+                            "https://boardroom.global/wp-content/uploads/2019/11/153167_c0f7f4e4-e1573642833946.jpg"),
+                        NetworkImage(
+                            "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"),
+                        NetworkImage(
+                            "https://basecampadventure.com/wp-content/uploads/2018/07/Everest-Three-Pass-Trek.jpg"),
+                        NetworkImage(
+                            "https://www.goworldtravel.com/wp-content/uploads/2019/03/climbing-mount-fuji-in-off-season-e1553896677572.jpg"),
+                        NetworkImage(
+                            "https://i.ytimg.com/vi/V3p7vx8mOqg/maxresdefault.jpg"),
+                      ],
+                      // animationDuration: Duration(seconds: 1),
+                      dotSize: 6.0,
+                      dotSpacing: 15.0,
+                      dotColor: Colors.black,
+                      indicatorBgPadding: 4.0,
+                      dotBgColor: Colors.grey.withOpacity(0.5),
+                      borderRadius: true),
+                ),
+              ),
+              SizedBox(
+                //^^^--For vertical spcaing--//
+                height: 14,
+              ),
+              Divider(),
               Text(
                 "    Trending Attractions",
                 style: TextStyle(
