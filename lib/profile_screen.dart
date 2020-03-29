@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 10),
             Center(
               child: Text(
-                "Nirmala Rawal",
+                "Done J",
                 style: TextStyle(fontWeight: FontWeight.w400, fontSize: 26),
               ),
             ),
@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(20.0),
                   child: Center(
                     child: Text(
-                      "9848553010",
+                      "done.conkie16@gmail.com",
                       style:
                           TextStyle(fontWeight: FontWeight.w300, fontSize: 19),
                     ),
@@ -93,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "Address: Tikapur Kailali Nepal,Block number 17",
+                    "Address: Hell",
                     style: TextStyle(fontWeight: FontWeight.w300, fontSize: 18),
                   ),
                 ),

@@ -1,5 +1,7 @@
 import 'package:desty/BottomBarScreen.dart';
+import 'package:desty/product_screen.dart';
 import 'package:desty/provider/products_provider.dart';
+import 'package:desty/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +15,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: BottomBarScreen(),
+        routes: {
+          ProductScreen.routeName: (ctx) => ProductScreen(),
+          SearchScreen.routeName: (ctx) => SearchScreen(),
+        },
       ),
     );
   }
